@@ -4,5 +4,9 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Provider } from 'mobx-react';
+
+import todoStore from './stores/TodoStore';
+
+ReactDOM.render(<Provider todoStore={todoStore}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
